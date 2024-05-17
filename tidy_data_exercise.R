@@ -12,6 +12,8 @@
 
 
 # 0 General Setup -----
+# RUN FIRST TIME
+# renv::init()
 ## 0.1 Load required libraries ----
 library("tidyverse") # data wrangling and ggplot2
 library("here")
@@ -80,6 +82,7 @@ htp_demo_groups |>
 # Problem: could be unclear which variables apply to which entity (Samples vs. Features)
 htp_meta_cytokines <- here("data/HTP_meta_cytokines_data.txt.gz") |> 
   read_tsv()
+htp_meta_cytokines
 # Tidied sample data
 htp_meta_cytokines |> 
   select(LabID, ParticipantID:Ethnicity) |> 
